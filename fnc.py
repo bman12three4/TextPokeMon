@@ -1,3 +1,8 @@
+"""
+Pokemon Text Adventure
+Copyright (C) 2016  Byron Lathi
+"""
+
 #defines functions for use in the other files.
 import time
 import math
