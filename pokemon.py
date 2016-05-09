@@ -8,6 +8,7 @@ lcd = LCD.Adafruit_CharLCDPlate()
 prompt = False
 clear = False
 
+#Pauses the program until any of the keys are pressed.
 def anyKey():
   prompt = True
   while prompt:
@@ -23,11 +24,20 @@ def anyKey():
       prompt = False
 return
 
+#Lists one screen (two lines) and waits for any of the 5 keys to be pressed
 def msgAnyKey(str):
   lcd.message(str)
   anyKey()
   lcd.clear()
-
+  
+#For messages with more than three liens
+def msgAnyKeyMultiLine(str1, str2):
+  msgAnyKey(str1)
+  lcd.show_cursor(True)
+  msgAnyKey(str2)
+  lcd.show_cursor(False)
+  
+#Main Code
 lcd.clear()
 lcd.message('Welcome to Text\nPokémon!')
 time.sleep(3)
@@ -38,8 +48,4 @@ lcd.clear()
 msgAnyKey('Press any key...')
 msgAnyKey('Welcome to your\nnew home!')
 msgAnyKey('Feel free to\nexplore!')
-lcd.message('Wait! Pokémon\nmay be hiding in')
-lcd.show_cursor(True)
-anyKey()
-lcd.clear()
-lcd.message('the grass!')
+msgAnyKeyMultiLine('Wait! Pokémon\nmay be hiding in','the grass!')
