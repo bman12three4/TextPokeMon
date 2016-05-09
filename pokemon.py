@@ -7,6 +7,7 @@ lcd = LCD.Adafruit_CharLCDPlate()
 
 prompt = False
 clear = False
+counter = 0
 
 #Pauses the program until any of the keys are pressed.
 def anyKey():
@@ -30,25 +31,44 @@ def msgAnyKey(str):
   anyKey()
   lcd.clear()
   
+#lists one screen and waits for the input seconds
+def msgWait(str, int):
+  lcd.message(str)
+  time.sleep(int)
+  lcd.clear()
+  
 #For messages with more than three liens
 def msgAnyKeyMultiLine(str1, str2):
   msgAnyKey(str1)
   lcd.show_cursor(True)
   msgAnyKey(str2)
   lcd.show_cursor(False)
+
+#says travelling followed by an elipses that grows and then deletes itself. Time is one second times input.
+def travelling(int):
+  counter = 0
+  while counter < int:
+    lcd.message('Travelling')
+    time.sleep(0.25)
+    lcd.message('.')
+    time.sleep(0.25)
+    lcd.message('.')
+    time.sleep(0.25)
+    lcd.message('.')
+    time.sleep(0.25)
+    lcd.clear()
+    counter = counter + 1
+
   
 #Main Code
 lcd.clear()
-lcd.message('Welcome to Text\nPokémon!')
-time.sleep(3)
-lcd.clear()
-lcd.message('Version 0.0.1')
-time.sleep(1)
-lcd.clear()
+msgWait('Welcome to Text\nPokémon, 3)
+msgWait('Version 0.0.2')
 msgAnyKey('Press any key...')
 msgAnyKey('Welcome to your\nnew home!')
 msgAnyKey('Feel free to\nexplore!')
 msgAnyKeyMultiLine('Wait! Pokémon\nmay be hiding in','the grass!')
-msgAnyKeyMultiLine('I am professor\noak,','PokéMon Trainer')
+msgAnyKeyMultiLine('I am professor\noak,','Pokémon Trainer')
 msgAnyKeyMultiLine('I am a pokemon\nresearcher.)
 msgAnyKeyMultiLine('Come to my Lab\nand let me show','you the world\nof PokéMon')
+travelling(2)
