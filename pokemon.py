@@ -7,6 +7,7 @@ import fnc as fnc
 lcd = LCD.Adafruit_CharLCDPlate()
   
 #Main Code
+print("TextPokeMon  Copyright (C) 2016  Byron Lathi\nThis program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.\nThis is free software, and you are welcome to redistribute it\nunder certain conditions; type `show c' for details.")
 lcd.clear()
 fnc.msgWait('Welcome to Text\nPokémon, 3)
 fnc.msgWait('Version 0.0.3')
