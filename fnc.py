@@ -63,3 +63,41 @@ def travelling(int):
     time.sleep(0.25)
     lcd.clear()
     counter = counter + 1
+
+#chooses between three options
+def choose3(str1, str2, str3, str4, str5, str6)
+  counter = 0
+  prompt = True
+  while prompt = True:
+    if counter == 0:
+      lcd.message(str1)
+      lcd.message('\n'
+      lcd.message(str2)
+    if counter == 1:
+      lcd.message(str3)
+      lcd.message('\n'
+      lcd.message(str4)
+    if counter == 2:
+      lcd.message(str5)
+      lcd.message('\n'
+      lcd.message(str6)
+    if lcd.is_pressed(LCD.LEFT):
+      lcd.clear()
+      if counter > 0:
+        counter = counter - 1
+      if counter == 0:
+        counter = 2
+    if lcd.is_pressed(LCD.RIGHT):
+      lcd.clear()
+      if counter < 2:
+        counter = counter + 1
+      if counter == 2:
+        counter = 0
+    if lcd.is_pressed(LCD.SELECT):
+      prompt = False
+  if counter == 0:
+    return str1
+  if counter == 1:
+    return str3
+  if counter == 2:
+    return str5
