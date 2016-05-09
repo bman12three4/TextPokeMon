@@ -9,7 +9,7 @@ lcd = LCD.Adafruit_CharLCDPlate()
 #Main Code
 lcd.clear()
 fnc.msgWait('Welcome to Text\nPokémon, 3)
-fnc.msgWait('Version 0.0.2')
+fnc.msgWait('Version 0.0.3')
 fnc.msgAnyKey('Press any key...')
 fnc.msgAnyKey('Welcome to your\nnew home!')
 fnc.msgAnyKey('Feel free to\nexplore!')
