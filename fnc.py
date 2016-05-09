@@ -10,6 +10,10 @@ prompt = False
 clear = False
 counter = 0
 
+prompt = False
+clear = False
+counter = 0
+
 #Pauses the program until any of the keys are pressed.
 def anyKey():
   prompt = True
