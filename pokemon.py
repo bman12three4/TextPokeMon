@@ -3,6 +3,7 @@ import math
 
 import Adafruit_CharLCD as LCD
 import fnc as fnc
+pokemon = ['','','','','','']
 
 lcd = LCD.Adafruit_CharLCDPlate()
   
@@ -22,4 +23,4 @@ fnc.travelling(2)
 fnc.msgAnyKeyMultiLine('Welcome to my\nlab! Here we','research Pokémon.')
 fnc.msgAnyKeyMultiLine('Pokemon are\nusefull for','everyone! you\nshould get one!')
 fnc.msgAnyKeyMultiLine('I happen to have\nthree pokemon','That you can\npick from')
-fnc.choose('Bulbasaur', 'Squirtle', 'Charmander')
+pokemon[0] = fnc.choose3('Bulbasaur', 'A grass type','Squirtle', 'A Water Type', 'Charmander', 'A fire type')
