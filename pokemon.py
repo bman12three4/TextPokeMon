@@ -1,3 +1,8 @@
+"""
+Pokemon Text Adventure
+Copyright (C) 2016  Byron Lathi
+"""
+
 import time
 import math
 
